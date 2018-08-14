@@ -11,8 +11,20 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Models\Articulo;
 
 Route::get('/', function () {
-    return view('welcome');
+    
+    $articulos = Articulo::all();
+    return view('inicio', compact('articulos'));
 });
+
+Route::get('/inicio', function () {
+        
+    $articulos = Articulo::all();
+    return view('inicio', compact('articulos'));
+});
+
+Auth::routes();
