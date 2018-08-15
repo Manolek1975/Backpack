@@ -14,17 +14,11 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\Articulo;
+use App\Http\Controllers\RutaController;
 
-Route::get('/', function () {
-    
-    $articulos = Articulo::all();
-    return view('inicio', compact('articulos'));
-});
+Route::get('/', 'RutaController@inicio');
+Route::get('/inicio', 'RutaController@inicio');
+Route::get('/compras/{articulo_id}', 'RutaController@compras');
 
-Route::get('/inicio', function () {
-        
-    $articulos = Articulo::all();
-    return view('inicio', compact('articulos'));
-});
 
 Auth::routes();

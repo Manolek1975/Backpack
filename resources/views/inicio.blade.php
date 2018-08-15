@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Tienda</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -63,7 +63,7 @@
                 		<div class="col-2">{{ $val->nombre }}</div>
     					<div class="col-2">{{ $val->seccion }}</div>
     					<div class="col-2">{{ $val->precio }}</div>
-    					<a href="https://comprar" class="nav-link">Comprar</a>
+    					<a href="{{ url('compras', ['articulo_id' => $val->id]) }}" class="nav-link">Comprar</a>
                 	</div>	
                 	@endforeach
                 </div>

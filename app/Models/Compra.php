@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class Cliente extends Model
+class Compra extends Model
 {
     use CrudTrait;
 
@@ -15,11 +15,11 @@ class Cliente extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'clientes';
+    protected $table = 'compras';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['nombre', 'apellidos', 'direccion', 'ciudad'];
+    protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -28,12 +28,6 @@ class Cliente extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-    
-    public function articulos() {
-        
-        return $this->belongsToMany('App\Model\Articulo');
-        
-    }
 
     /*
     |--------------------------------------------------------------------------
